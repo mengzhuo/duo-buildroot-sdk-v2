@@ -33,3 +33,7 @@ insmod /mnt/system/ko/aic8800_fdrv.ko
 # Insmod PWM Module
 insmod /mnt/system/ko/cv181x_pwm.ko
 
+#UART1
+duo-pinmux -w A19/UART1_TX
+duo-pinmux -w A18/UART1_RX
+echo "Set UART1 A18/A19"
