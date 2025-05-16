@@ -6,6 +6,11 @@
 
 / {
 	model = "Milk-V DuoS";
+
+        pps: pps@1 {
+		compatible = "pps-gpio";
+		gpios = <&portb 11 0>;
+	};
 };
 
 &mipi_rx {
