@@ -3,6 +3,7 @@
 #include "cv181x_asic_bga.dtsi"
 #include "cv181x_asic_emmc.dtsi"
 #include "cv181x_default_memmap.dtsi"
+#include <dt-bindings/leds/common.h>
 
 / {
 	model = "Milk-V DuoS";
@@ -10,6 +11,15 @@
         pps: pps@1 {
 		compatible = "pps-gpio";
 		gpios = <&portb 11 0>;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		blue {
+			gpios = <&porta 29 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "heartbeat";
+			function = LED_FUNCTION_STATUS;
+		};
 	};
 };
 
